@@ -98,4 +98,6 @@ async function getAnswerFromOpenAI(question, websiteHtml) {
 
   // Send the question to the OpenAI API and get the answer
   const response = await openai.complete(requestParams);
-  const answer = response.choices[0
+  const answer = response.choices[0].text.trim();
+  return answer;
+}
